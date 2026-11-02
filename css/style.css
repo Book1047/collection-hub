@@ -1,0 +1,307 @@
+
+/* ==========================================
+   GLOBAL STYLES & CYBERPUNK THEME
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #e2e8f0;
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    background: linear-gradient(180deg, #151d30 0%, #0b0f19 100%);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00f0ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+nav {
+    background-color: #151d30;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    overflow-x: hidden;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 10px 5px;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #00f0ff;
+    background-color: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+/* ==========================================
+   MAIN CONTENT & SECTIONS
+   ========================================== */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 50px;
+    background-color: #111827;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+main section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #00f0ff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+/* ==========================================
+   GRID LAYOUT & CARDS
+   ========================================== */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.grid-container .card {
+    width: calc(33.333% - 17px);
+    min-width: 250px;
+    background-color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-container .card:hover {
+    transform: translateY(-5px);
+    border-color: #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background-color: rgba(15, 23, 42, 0.5);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 40px;
+}
+
+/* ==========================================
+   STATS CONTAINER
+   ========================================== */
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    margin: 55px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.stat-box {
+    background-color: #111827;
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 8px;
+    padding: 25px 20px;
+    flex: 1;
+    max-width: 320px;
+    min-width: 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.stat-box h3 {
+    font-size: 2.2rem;
+    color: #00f0ff;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.stat-box p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - TABLET & MOBILE
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* Navigation */
+    nav {
+        padding: 10px 5px;
+    }
+
+    nav ul {
+        gap: 8px;
+        padding: 10px 5px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    /* Stats - จัดเรียงการ์ดแนวตั้งบนมือถือ */
+    .stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+        max-width: 100%;
+        margin: 35px auto;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .stats-container .stat-box {
+        flex: none;
+        width: 100%;
+        max-width: 320px;
+        min-width: 0;
+        margin: 0;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Featured Cards */
+    .grid-container .card {
+        width: 100%;
+        max-width: 320px;
+        min-width: 0;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+@media (max-width: 420px) {
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 20px 15px;
+    }
+
+    .stat-box h3 {
+        font-size: 2rem;
+    }
+
+    .stat-box p {
+        font-size: 0.85rem;
+    }
+}
