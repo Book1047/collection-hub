@@ -1,8 +1,7 @@
-/* ==========================================
-   My Figure Collection - Main Stylesheet
-   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&display=swap');
 
-/* ตั้งค่าพื้นฐาน */
+body, h1, h2, h3, h4, h5, h6, a, p { font-family: 'Orbitron', sans-serif !important; }
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0b0f19;
@@ -82,6 +81,7 @@ main {
 .hero-section h2 {
   color: #38bdf8;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .hero-section p {
@@ -136,51 +136,89 @@ main {
   letter-spacing: 1px;
 }
 
-/* Grid Showcase (การ์ดแสดงผลฟิกเกอร์) */
-h2 {
-  color: #f8fafc;
+/* ==========================================
+   ดีไซน์กรอบบล็อกหมวดหมู่และฟอนต์เดิมที่สวยงาม
+   ========================================== */
+section {
+  background: #0f172a !important;
+  border: 1px solid #38bdf8 !important;
+  border-radius: 0 !important;
+  clip-path: polygon(
+    15px 0, 
+    calc(100% - 15px) 0, 
+    100% 15px, 
+    100% calc(100% - 15px), 
+    calc(100% - 15px) 100%, 
+    15px 100%, 
+    0 calc(100% - 15px), 
+    0 15px
+  ) !important;
+  padding: 30px;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3)) !important;
+}
+
+section h2 {
+  color: #38bdf8;
   border-bottom: 2px solid #334155;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
+  margin-top: 0;
   margin-bottom: 30px;
+  text-align: center !important;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 25px !important;
+  max-width: 900px !important; /* กำหนดความกว้างกล่องให้พอดีกับ 3 ตัว */
+  margin: 0 auto !important;   /* จัดกล่องให้อยู่ตรงกลาง */
 }
 
 .card {
-  background-color: #1e293b;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #334155;
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-  padding-bottom: 20px;
+  width: 250px !important;     /* ล็อกความกว้างการ์ดให้พอดีแถวละ 3 ตัว */
+}
+
+.card {
+  width: 250px !important;
+  background-color: #1e293b !important;
+  border-radius: 12px !important;
+  border: 1px solid #334155 !important;
+  padding: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.3s, border-color 0.3s !important;
+  text-align: center !important;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+  transform: translateY(-5px) !important;
+  border-color: #38bdf8 !important;
 }
 
+
 .card img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-bottom: 2px solid #334155;
+  width: 100% !important;
+  height: 310px !important;            /* เพิ่มความสูงรูปภาพให้ใหญ่ขึ้นเต็มกรอบ */
+  object-fit: contain !important;
+  background-color: transparent !important;
+  border-radius: 8px !important;
+  border: none !important;
+  padding-top: 4px !important;         /* ลดระยะดันบนลง เพื่อให้รูปขยายใหญ่ได้เต็มที่ */
+  margin-bottom: 6px !important;
+  box-sizing: border-box !important;
 }
 
 .card h4 {
   margin: 15px 0 5px 0;
   color: #38bdf8;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .card p {
   color: #94a3b8;
   margin: 0;
+  font-size: 0.9rem;
 }
 
 /* ส่วนท้ายเว็บ (Footer) */
@@ -198,7 +236,6 @@ footer {
    Responsive Media Query (สำหรับหน้าจอมือถือเท่านั้น)
    ========================================== */
 @media (max-width: 768px) {
-  /* เมนู Navbar เรียงแนวตั้งเฉพาะบนมือถือ */
   nav ul {
     flex-direction: column;
     width: 100%;
@@ -210,7 +247,6 @@ footer {
     border-bottom: 1px solid #334155;
   }
 
-  /* กล่อง Stats ให้เรียงแนวตั้งเฉพาะตอนอยู่บนมือถือเท่านั้น */
   .stats-container {
     display: flex !important;
     flex-direction: column !important;
@@ -226,12 +262,4 @@ footer {
     flex: none !important;
     box-sizing: border-box !important;
   }
-}
-
-/* ปรับแต่งรูปภาพการ์ดตัวละครไม่ให้โดนตัดหัว */
-.card img {
-  width: 100% !important;
-  height: 320px !important;
-  object-fit: contain !important; /* เปลี่ยนจาก cover เป็น contain เพื่อให้เห็นรูปครบถ้วน */
-  background-color: #0b0f19 !important; /* เติมสีพื้นหลังรอบๆ รูปถ้าสัดส่วนภาพไม่เท่ากัน */
 }
